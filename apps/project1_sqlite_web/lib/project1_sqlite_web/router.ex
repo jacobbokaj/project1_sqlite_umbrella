@@ -23,7 +23,7 @@ defmodule Project1SqliteWeb.Router do
   scope "/", Project1SqliteWeb do
     pipe_through :browser
 
-    get "/fun_page", Funpage, :home
+    live "/fun_page", Funpage
   end
 
 
