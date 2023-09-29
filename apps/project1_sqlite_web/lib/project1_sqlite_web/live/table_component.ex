@@ -17,13 +17,18 @@ defmodule Project1SqliteWeb.TableComponent do
   attr(:car_name, :string, required: true)
   def render(assigns) do
     ~H"""
-    <div>
-      <ButtonComponents.cars_show_button
-        type="button"
-        click_name="show_car"
-        myself={@myself}
-      />
-      <TableComponents.table_car cars={@cars} car_name={@car_name}/>
+      <div>
+        <ButtonComponents.cars_show_button
+          type="button"
+          click_name="show_car"
+          myself={@myself}
+        />
+        <TableComponents.table_car
+          />
+          cars={@cars}
+          car_name={@car_name}
+          take_car="take_car"
+          myself={@myself}
       </div>
     """
 

@@ -1,8 +1,7 @@
 defmodule Project1SqliteWeb.Funpage do
   use Project1SqliteWeb, :live_view
 
-  alias Project1Sqlite.CarsContext
-  alias Project1SqliteWeb.TableComponents
+
   def mount(_params, _session, socket) do
     {:ok,
     socket
