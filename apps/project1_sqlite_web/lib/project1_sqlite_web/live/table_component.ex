@@ -36,10 +36,8 @@ defmodule Project1SqliteWeb.TableComponent do
 
   def handle_event("take_car",%{"index" => index} , socket) do
 
-    #response = CarsContext.get_cars_with_condition("id",String.to_integer(index) + 1)
     car_list_response = socket.assigns[:cars]
-    car_taget = Enum.at(car_list_response,String.to_integer(index) + 1)
-    IO.puts("car_target here: #{inspect(car_taget)}")
+    car_taget = Enum.at(car_list_response,String.to_integer(String.to_integer(index) + 1))
 
     {:noreply,
     socket
@@ -50,13 +48,12 @@ defmodule Project1SqliteWeb.TableComponent do
 
   def handle_event("show_cars", _unsigned_params, socket) do
 
-  car_list_response = CarsContext.get_cars()
-
-
+    car_list_response = CarsContext.get_cars()
+    car_taget = Enum.at(car_list_response,1)
 
   car_list_reverse = Enum.reverse(car_list_response)
 
-  {:noreply, assign(socket, cars: car_list_reverse)}
+  {:noreply, assign(socket, cars: car_list_reverse,car_name: Enum.at(car_taget,1))}
   end
 
 end
