@@ -38,11 +38,7 @@ defmodule Project1SqliteWeb.TableComponent do
 
     response = CarsContext.get_cars_with_condition("id",String.to_integer(index) + 1)
 
-    car_list = Enum.reduce(response.rows, [], fn row, acc ->
-      [row | acc]
-     end)
-
-    car_taget = Enum.at(car_list,0)
+    car_taget = Enum.at(response,0)
     IO.puts("car_target here: #{inspect(car_taget)}")
 
     {:noreply,
