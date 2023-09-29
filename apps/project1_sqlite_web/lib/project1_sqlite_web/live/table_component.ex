@@ -50,13 +50,11 @@ defmodule Project1SqliteWeb.TableComponent do
 
   def handle_event("show_car", _unsigned_params, socket) do
 
-  response = CarsContext.get_cars()
+  car_list_response = CarsContext.get_cars()
 
-  car_list = Enum.reduce(response.rows, [], fn row, acc ->
-   [row | acc]
-  end)
 
-  car_list_reverse = Enum.reverse(car_list)
+
+  car_list_reverse = Enum.reverse(car_list_response)
 
   {:noreply, assign(socket, cars: car_list_reverse)}
   end
