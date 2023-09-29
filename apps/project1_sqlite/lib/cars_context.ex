@@ -7,7 +7,12 @@ defmodule Project1Sqlite.CarsContext do
     response_atom = elem(response,0)
 
     case response_atom do
-      :ok -> elem(response,1)
+      :ok ->
+       cars_sqlite = elem(response,1)
+        Enum.reduce(cars_sqlite.rows, [], fn row, acc ->
+          [row | acc]
+         end)
+
       :error -> :error
     end
   end
@@ -17,20 +22,23 @@ defmodule Project1Sqlite.CarsContext do
     response_atom = elem(response,0)
 
     case response_atom do
-      :ok -> elem(response,1)
+      :ok -> cars_sqlite = elem(response,1)
+      Enum.reduce(cars_sqlite.rows, [], fn row, acc ->
+        [row | acc]
+       end)
       :error -> :error
     end
   end
 
   def create_car(id,brand,model,year,price) do
     response = CarsQueries.insert_car(id,brand,model,year,price)
+    IO.inspect("deleting car: #{inspect(response)}")
     elem(response,0)
   end
 
   def delete_cars_with_condition(column,value) do
     response = CarsQueries.delete_cars_where(column,value)
     response_atom = elem(response,0)
-
     case response_atom do
       :ok -> elem(response,1)
       :error -> :error

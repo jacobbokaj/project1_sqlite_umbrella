@@ -16,7 +16,7 @@ defmodule Project1Sqlite.CarsContextTest do
       CarsContext.create_car(1,"brandtest","modeltest",1021,9999)
 
      response = CarsContext.get_cars()
-     assert is_map(response)
+     assert is_list(response)
     end
 
     test "Create cars. Should succes" do
@@ -39,7 +39,7 @@ defmodule Project1Sqlite.CarsContextTest do
       CarsContext.create_car(1,"brandtest","modeltest",1021,9999)
 
      response = CarsContext.get_cars_with_condition("brand","Toyo")
-     assert is_map(response)
+     assert is_list(response)
     end
 
     test "Get cars with condition. Should fail" do
