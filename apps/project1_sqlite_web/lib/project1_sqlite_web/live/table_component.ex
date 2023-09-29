@@ -20,7 +20,7 @@ defmodule Project1SqliteWeb.TableComponent do
       <div>
         <ButtonComponents.cars_show_button
           type="button"
-          click_name="show_car"
+          click_name="show_cars"
           myself={@myself}
         />
         <TableComponents.table_car
@@ -36,9 +36,9 @@ defmodule Project1SqliteWeb.TableComponent do
 
   def handle_event("take_car",%{"index" => index} , socket) do
 
-    response = CarsContext.get_cars_with_condition("id",String.to_integer(index) + 1)
-
-    car_taget = Enum.at(response,0)
+    #response = CarsContext.get_cars_with_condition("id",String.to_integer(index) + 1)
+    car_list_response = socket.assigns[:cars]
+    car_taget = Enum.at(car_list_response,String.to_integer(index) + 1)
     IO.puts("car_target here: #{inspect(car_taget)}")
 
     {:noreply,
@@ -48,7 +48,7 @@ defmodule Project1SqliteWeb.TableComponent do
   }
   end
 
-  def handle_event("show_car", _unsigned_params, socket) do
+  def handle_event("show_cars", _unsigned_params, socket) do
 
   car_list_response = CarsContext.get_cars()
 
