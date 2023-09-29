@@ -47,5 +47,4 @@ defmodule Project1SqliteWeb.TableComponents do
       Enum.at(objects,index)
     end
   end
-
 end

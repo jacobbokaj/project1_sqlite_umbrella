@@ -24,11 +24,11 @@ defmodule Project1SqliteWeb.TableComponent do
           myself={@myself}
         />
         <TableComponents.table_car
-          />
           cars={@cars}
           car_name={@car_name}
           take_car="take_car"
           myself={@myself}
+          />
       </div>
     """
 
