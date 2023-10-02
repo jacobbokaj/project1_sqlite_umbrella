@@ -23,7 +23,6 @@ defmodule Project1SqliteWeb.Funpage do
         car_name={@car_name}
       />
     """
-
   end
 
 

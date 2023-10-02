@@ -21,7 +21,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponent do
   end
 
   def handle_event("delete_cars",%{"car_id" => car_id}, socket) do
-    IO.puts("car_id from form input: #{inspect(car_id)}")
+    response_car_list =
     socket = assign(socket,car_id: "")
     {:noreply,socket}
   end
