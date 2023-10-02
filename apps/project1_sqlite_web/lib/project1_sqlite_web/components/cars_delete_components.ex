@@ -1,15 +1,14 @@
 defmodule Project1SqliteWeb.CarsDeleteComponents do
   use Phoenix.Component
 
-  alias Project1SqliteWeb.ButtonComponents
 
-  def pf_input(assigns) do
+
+  attr(:id,:string, required: true)
+  attr(:name,:string, required: true)
+
+  def car_id_input(assigns) do
     ~H"""
-    <div>
-      <label>id</label>
-      <input id={@id} type="number" value={@car_id}/>
-    </div>
-
+      <input type="number" id={@id} name={@name} placeholder="Indtast bilens årgang" />
     """
   end
 

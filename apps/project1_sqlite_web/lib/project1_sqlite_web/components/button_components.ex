@@ -19,7 +19,16 @@ defmodule Project1SqliteWeb.ButtonComponents do
     """
   end
 
-  def cars_delete_button(assigns) do
-
+  attr(:type, :string, required: true)
+  attr(:btn_text,:string,required: true)
+  def btn_simple(assigns) do
+    ~H"""
+    <button
+    type={@type}
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+    <%= @btn_text %>
+    </button>
+    """
   end
 end

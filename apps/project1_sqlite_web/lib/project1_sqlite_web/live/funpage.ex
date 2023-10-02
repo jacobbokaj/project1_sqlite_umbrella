@@ -7,7 +7,6 @@ defmodule Project1SqliteWeb.Funpage do
     socket
     |> assign(cars: [])
     |> assign(car_name: "")
-    |> assign(car_id: -1)
   }
   end
 
@@ -16,7 +15,6 @@ defmodule Project1SqliteWeb.Funpage do
       <.live_component
         module={Project1SqliteWeb.CarsDeleteComponent}
         id="cars_modify"
-        car_id={@car_id}
         />
       <.live_component
         module={Project1SqliteWeb.TableComponent}
