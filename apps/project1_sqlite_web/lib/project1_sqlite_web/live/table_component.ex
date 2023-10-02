@@ -17,11 +17,12 @@ defmodule Project1SqliteWeb.TableComponent do
   attr(:car_name, :string, required: true)
   def render(assigns) do
     ~H"""
-      <div>
+      <div class="box-border h-32 w-41 p-2 border-4 ...">
         <ButtonComponents.cars_show_button
           type="button"
-          click_name="show_cars"
+          phx_click_name="show_cars"
           myself={@myself}
+          btn_text="show cars"
         />
         <TableComponents.table_car
           cars={@cars}
@@ -37,7 +38,7 @@ defmodule Project1SqliteWeb.TableComponent do
   def handle_event("take_car",%{"index" => index} , socket) do
 
     car_list_response = socket.assigns[:cars]
-    car_taget = Enum.at(car_list_response,String.to_integer(String.to_integer(index) + 1))
+    car_taget = Enum.at(car_list_response,String.to_integer(index) + 1)
 
     {:noreply,
     socket
