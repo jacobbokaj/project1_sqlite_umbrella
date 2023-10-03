@@ -2,11 +2,11 @@ defmodule Project1SqliteWeb.CarCreateComponents do
   use Phoenix.Component
 
 
-  attr(:car_id, :integer, required: true)
+  attr(:car_id, :string, required: true)
   attr(:brand, :string, required: true)
   attr(:model, :string, required: true)
-  attr(:year, :integer, required: true)
-  attr(:price, :integer, required: true)
+  attr(:year, :string, required: true)
+  attr(:price, :string, required: true)
   def create_car(assigns) do
     ~H"""
       <input type="number" name={@car_id} placeholder="Car id" />

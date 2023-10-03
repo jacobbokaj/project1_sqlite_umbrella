@@ -15,7 +15,7 @@ defmodule Project1SqliteWeb.CarCreateComponent do
            model="model"
            year="year"
            price="price"
-           />
+          />
           <ButtonComponents.btn_simple type="submit" btn_text="create car"/>
         </form>
 
