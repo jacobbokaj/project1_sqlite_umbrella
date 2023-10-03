@@ -13,8 +13,12 @@ defmodule Project1SqliteWeb.Funpage do
   def render(assigns) do
     ~H"""
       <.live_component
+        module={Project1SqliteWeb.CarCreateComponent}
+        id="create_car"
+        />
+      <.live_component
         module={Project1SqliteWeb.CarsDeleteComponent}
-        id="cars_modify"
+        id="cars_delete"
         />
       <.live_component
         module={Project1SqliteWeb.TableComponent}

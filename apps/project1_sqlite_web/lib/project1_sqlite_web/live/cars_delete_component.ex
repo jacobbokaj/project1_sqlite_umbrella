@@ -12,7 +12,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponent do
 
       <form phx-submit="delete_cars" phx-target={@myself}>
 
-        <CarsDeleteComponents.car_id_input  id="car_id" name="car_id"/>
+        <CarsDeleteComponents.car_id_input name="car_id"/>
         <ButtonComponents.btn_simple type="submit" btn_text="Delete car"/>
 
       </form>
