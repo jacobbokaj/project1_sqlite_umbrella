@@ -5,13 +5,6 @@ defmodule Project1SqliteWeb.TableComponent do
   alias Project1Sqlite.CarsContext
   alias Project1SqliteWeb.TableComponents
   alias Project1SqliteWeb.ButtonComponents
- # def mount(_params, _session, socket) do
- #   {:ok,
- #   socket
- #   |> assign(cars: [])
- #   |> assign(car_name: "")
- # }
- # end
 
   attr(:cars, :list, required: true)
   attr(:car_name, :string, required: true)
@@ -33,18 +26,6 @@ defmodule Project1SqliteWeb.TableComponent do
       </div>
     """
 
-  end
-
-  def handle_event("take_car",%{"index" => index} , socket) do
-
-    car_list_response = socket.assigns[:cars]
-    car_taget = Enum.at(car_list_response,String.to_integer(index) + 1)
-
-    {:noreply,
-    socket
-    |> assign(car_name: Enum.at(car_taget,1))
-
-  }
   end
 
   def handle_event("show_cars", _unsigned_params, socket) do

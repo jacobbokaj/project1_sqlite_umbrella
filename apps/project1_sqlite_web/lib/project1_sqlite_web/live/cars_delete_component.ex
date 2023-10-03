@@ -3,7 +3,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponent do
 
   alias Project1SqliteWeb.CarsDeleteComponents
   alias Project1SqliteWeb.ButtonComponents
-
+  alias Project1Sqlite.CarsContext
 
   attr(:id, :integer, required: true)
   def render(assigns) do
@@ -13,7 +13,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponent do
       <form phx-submit="delete_cars" phx-target={@myself}>
 
         <CarsDeleteComponents.car_id_input  id="car_id" name="car_id"/>
-        <ButtonComponents.btn_simple type="submit" btn_text="Submit here"/>
+        <ButtonComponents.btn_simple type="submit" btn_text="Delete car"/>
 
       </form>
     </div>
@@ -21,7 +21,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponent do
   end
 
   def handle_event("delete_cars",%{"car_id" => car_id}, socket) do
-    #response_car_list =
+    response_car_list = CarsContext.delete_cars_with_condition("id",car_id)
     socket = assign(socket,car_id: "")
     {:noreply,socket}
   end

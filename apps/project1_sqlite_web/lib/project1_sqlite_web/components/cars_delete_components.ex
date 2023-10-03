@@ -8,7 +8,7 @@ defmodule Project1SqliteWeb.CarsDeleteComponents do
 
   def car_id_input(assigns) do
     ~H"""
-      <input type="number" id={@id} name={@name} placeholder="Indtast bilens årgang" />
+      <input type="number" id={@id} name={@name} placeholder="Car id" />
     """
   end
 
