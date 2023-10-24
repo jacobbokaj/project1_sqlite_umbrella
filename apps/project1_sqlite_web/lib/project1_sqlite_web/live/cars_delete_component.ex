@@ -1,8 +1,7 @@
 defmodule Project1SqliteWeb.CarsDeleteComponent do
   use Project1SqliteWeb, :live_component
 
-  alias Project1SqliteWeb.CarsDeleteComponents
-  alias Project1SqliteWeb.ButtonComponents
+  alias Project1SqliteWeb.{CarsDeleteComponents, ButtonComponents}
   alias Project1Sqlite.CarsContext
 
   attr(:id, :integer, required: true)
