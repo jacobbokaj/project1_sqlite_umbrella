@@ -26,8 +26,6 @@ defmodule Project1SqliteWeb.Router do
     live "/fun_page", Funpage
   end
 
-
-
   # Other scopes may use custom stacks.
   # scope "/api", Project1SqliteWeb do
   #   pipe_through :api

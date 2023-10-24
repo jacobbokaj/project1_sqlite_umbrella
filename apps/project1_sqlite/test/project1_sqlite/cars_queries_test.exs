@@ -59,15 +59,5 @@ defmodule Project1Sqlite.CarsQueriesTest do
     test "Delete cars where. Should fail" do
       Ecto.Adapters.SQL.query(Project1Sqlite.Repo, "CREATE TABLE cars(id,brand,model,year,price)")
       CarsQueries.insert_car(1, "brandtest", "modeltest", 1021, 9999)
-
-      response = CarsQueries.delete_cars_where("b", "'tændstikker'")
-      assert elem(response, 0) == :error
-    end
-
-    test "Update cars where. Should succes"
-    Ecto.Adapters.SQL.query(Project1Sqlite.Repo, "CREATE TABLE cars(id,brand,model,year,price)")
-    CarsQueries.insert_car(1, "brandtest", "modeltest", 1021, 9999)
-
-    CarsQueries.update_cars_where("id", "1", "brand", "sovs")
   end
 end

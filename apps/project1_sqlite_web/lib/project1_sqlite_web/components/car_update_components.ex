@@ -1,4 +1,4 @@
-defmodule Project1SqliteWeb.CarCreateComponents do
+defmodule Project1SqliteWeb.CarUpdateComponents do
   use Phoenix.Component
 
   attr(:car_id, :string, required: true)
@@ -7,7 +7,7 @@ defmodule Project1SqliteWeb.CarCreateComponents do
   attr(:year, :string, required: true)
   attr(:price, :string, required: true)
 
-  def create_car(assigns) do
+  def update_car(assigns) do
     ~H"""
     <input type="number" name={@car_id} placeholder="Car id" />
     <input type="text" name={@brand} placeholder="Brand" />

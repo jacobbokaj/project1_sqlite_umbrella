@@ -27,7 +27,6 @@ defmodule Project1Sqlite.Umbrella.MixProject do
     [
       # Required to run "mix format" on ~H/.heex files from the umbrella root
       {:phoenix_live_view, ">= 0.0.0"}
-
     ]
   end
 

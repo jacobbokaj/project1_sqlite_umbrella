@@ -51,8 +51,18 @@ defmodule Project1Sqlite.CarsContext do
     end
   end
 
-  def update_cars_with_condition(condition, condition_value) do
-    response = CarsQueries.delete_cars_where(condition, condition_value)
+  def update_cars_with_condition(condition, condition_value, column, value) do
+    response = CarsQueries.update_cars_where(condition, condition_value, column, value)
+    response_atom = elem(response, 0)
+
+    case response_atom do
+      :ok -> elem(response, 1)
+      :error -> :error
+    end
+  end
+
+  def count_cars() do
+    response = CarsQueries.count_cars()
     response_atom = elem(response, 0)
 
     case response_atom do
