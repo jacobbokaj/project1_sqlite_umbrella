@@ -30,4 +30,8 @@ defmodule Project1Sqlite.CarsQueries do
       "UPDATE cars SET #{column} = #{value} WHERE #{condition} = #{condition_value}"
     )
   end
+
+  def count_cars() do
+    Ecto.Adapters.SQL.query(Project1Sqlite.Repo, "SELECT COUNT(*) FROM cars")
+  end
 end

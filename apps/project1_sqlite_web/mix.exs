@@ -23,7 +23,7 @@ defmodule Project1SqliteWeb.MixProject do
   def application do
     [
       mod: {Project1SqliteWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools,:project1_sqlite]
+      extra_applications: [:logger, :runtime_tools, :project1_sqlite]
     ]
   end
 
